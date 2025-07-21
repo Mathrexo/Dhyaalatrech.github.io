@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhyaa Latrech | Front-end dev >_ </title>
+</head>
+<link rel="shortcut icon"
+    href="C:\Users\hp\OneDrive\Desktop\KEEP SAFE\Family photos\ChatGPT Image Mar 31, 2025, 11_26_05 PM.png"
+    type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet">
+<style>
+    :root {
+        --primary: #4361ee;
+        --secondary: #3a0ca3;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gold: #ffd700;
+    }
+
+    body {
+        background-image: linear-gradient(to right, snow, #4361ee);
+        font-family: 'Poppins', sans-serif;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #ffd700;
+    }
+
+    a:hover {
+        color: #3a0ca3;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .Links1 {
+        position: absolute;
+        left: 190px;
+        top: 6px
+    }
+
+    .Links2 {
+        position: absolute;
+        right: 40%;
+        top: 6px;
+    }
+
+    .Links3 {
+        position: absolute;
+        left: 420px;
+        top: 6px;
+    }
+
+    links3 {
+        position: absolute;
+        right: 190px;
+        top: 6px;
+    }
+
+    .photo-container {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #3498db;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        left: 50%;
+    }
+
+    .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .photo-container:hover img {
+        transform: scale(1.05);
+    }
+
+
+    .divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        margin: 1.5rem auto;
+        border-radius: 2px;
+    }
+
+
+    section {
+        border: #f8f9fa 16px solid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .P1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--secondary);
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .about-me {
+        position: absolute;
+        left: 530px;
+        font-style: italic;
+    }
+
+    .talents {
+        display: inline;
+        border: #3a0ca3 0.5px solid;
+        background-image: linear-gradient(to left, var(--primary), var(--secondary));
+        border-radius: 40px;
+        text-align: center;
+        color: #f8f9fa;
+    }
+
+    .quran-section {
+        background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+        color: white;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .quran-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--gold);
+    }
+
+    .arabic {
+        font-family: 'Amiri', serif;
+        font-size: 1.8rem;
+        line-height: 1.8;
+        margin: 1.5rem 0;
+    }
+
+    #latest-sec {
+        background-image: linear-gradient(to right, #3a0ca3 0%, #4361ee 100%);
+        padding: 0.5rem;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem;
+        background: var(--dark);
+        color: white;
+        border-radius: 15px;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    a {
+        color: white;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .connection-warning {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff6b6b;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000;
+    }
+
+    .connection-warning button {
+        background: white;
+        color: #ff6b6b;
+        border: none;
+        padding: 5px 10px;
+        margin-left: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Gabriola&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Elephant&display=swap');
+
+    #welcome-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #367E7F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 1.5s ease-out;
+    }
+
+    #welcome-logo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+        /* Add your logo styling here */
+        background-color: wheat;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Elephant', serif;
+        font-size: 24px;
+        color: black;
+    }
+
+    #welcome-text {
+        font-family: 'Gabriola', cursive;
+        font-size: 4rem;
+        color: wheat;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    #welcome-text span.x {
+        font-family: 'Elephant', serif;
+        font-size: 5rem;
+        color: black;
+        margin: 0 10px;
+    }
+
+    #welcome-text span.la {
+        color: wheat;
+    }
+</style>
+
+<body>
+    <nav class="navbar" style="text-align: center; text-decoration: none; color: #ffd700;">
+        <div> <a href="#Haa-bot" class="links1">About me</a>
+            <a href="#Talents" class="links2">My Talents</a>
+            <a href="#latest-sec" class="links3">Look to future</a>
+            <a href="#footer" class="links4">contact me</a>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <header id="Hea-bot">
+        <div class="photo-container">
+            <img src="C:\Users\hp\OneDrive\Desktop\KEEP SAFE\Family photos\ChatGPT Image Mar 31, 2025, 11_26_05 PM.png"
+                alt="My Portfolio Photo">
+            <div style="text-align: center;">
+                <h1 style="font-size: 2em; color:var(--secondary);">🧑‍💻Front-end Dev | Quoran reciter🕌</h1>
+                <p>I'm dhyaa LA & This is #ROAD_TO_BAC_2026</p>
+            </div>
+    </header>
+    <div class="divider"></div>
+    <section>
+        <div id="Aboutme">
+            <h1 style="text-align: center;">Introduction🧑‍💻</h1>
+            <br>
+            <div class="divider" style="text-align: center;"></div>
+            <p class="P1">Dhyaa LA ia front-end Dev in his career begins..With a passion for creating intuitive and
+                visually
+                stunning
+                web experiences, I specialize in crafting
+                responsive and accessible websites using modern technologies</p>
+            </header>
+    </section>
+    <div class="divider"></div>
+    <section class="Talents">
+        <h1 style="text-align: center;">My talents</h1>
+        <div class="divider"></div>
+        As I'M A learner or FE-dev i've 4 coding languages in my pocket & they're
+        <span class="talents">JS</span>
+        <span class="talents">HTML</span>
+        <span class="talents">CSS</span>
+        <span class="talents">python</span>
+    </section>
+    <div class="divider"></div>
+    <section class="quran-section">
+        <div class="quran-icon">🕋</div>
+        <h2 class="section-title" style="color: white;">My Quran Journey</h2>
+        <p>Memorizing the Quran has been the most transformative experience of my life. It taught me discipline,
+            perseverance, and the value of consistent effort - qualities I bring to every coding project.</p>
+        <p class="arabic">ان ولــــيي الله الذي نزل الكتاب و هو يتولى الصالحين</p>
+        <p>"My guide is allah & he take interests of the goods peoples" Hud</p>
+    </section>
+    <Section id="latest-sec">
+        <h1 style="color: #f8f9fa;">🔮Look to the future</h1>
+        <div class="divider"></div>
+        <p>Incallah, I'll coutinue my research & studies at <a href="https://www.ensia.edu.dz/ar/">ENSIA🔍<strong> if I
+                    get a big Average in the <a href="">#ROAD_TO_BAC_2026</strong> & it'll be a cool dream, I ask allah
+                the
+                lucks & all success for me &
+                my
+                all cool friends</p>
+    </Section>
+    <div
+        style="background-image: linear-gradient(to right,var(--primary), var(--secondary)); border: #ffd700 solid 0.2px; border-radius: 20px 20px;text-align: center;color: #f8f9fa;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <a>Do you support gaza?...ask your heart</a>
+    </div>
+    <br><br>
+    <footer id="footer">
+        for more features about the developper you can contact me by these links or the phone number in the bottom
+        ma
+        dear:
+        <a href="https://www.facebook.com/Mathrexo5.2.08/" class="contact">Facebook</a>
+        <a href="https://www.instagram.com/math_rexo/" class="contact">Instagram</a>
+        <a href="https://www.threads.com/@math_rexo?xmt=AQF0QK1Zzo0ZHYXL4UxVQvm78CqXXGkyKhr2Lcf9IyfuMjI"
+            class="contact">Threads</a>
+        <a href="https://t.me/Dhyaa_latrech_60" class="contact">Telegram</a>
+        <a href="https://x.com/Mathrexo" class="contact">X</a>
+        <a href="https://github.com/Mathrexo" class="contact">GitHub</a>
+        <div>📧mail:latrechfamilycomputer@gmail.com</div><br>
+        <div>📞phone numbers:
+            +213 775750366 <br>
+            +213 777736137
+        </div><br>
+        <div>🅰️Adress:Zerara Elsaid street, Ain Elbaidhaa Ahrich , Mila , Algeria</div>
+    </footer>
+    <div id="welcome-container">
+        <div id="welcome-logo" style="color: rgb(190, 163, 111);">Dhyaa <p
+                style="font-size: xx-large;color: black;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                X </p> LA</div>
+        <div id="welcome-text">
+            <span class="d">Dhyaa</span>
+            <span class="x">X</span>
+            <span class="la">LA</span>
+        </div>
+        <script>
+            function checkConnection() {
+                const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+                if (connection) {
+                    // Check effective connection type
+                    if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+                        return true;
+                    }
+
+                    // Check downlink speed (in Mbps)
+                    if (connection.downlink < 0.05) { // ~50kbps
+                        return true;
+                    }
+                }
+
+                // Fallback: If connection API not supported, use latency detection
+                const startTime = Date.now();
+                return fetch('https://httpbin.org/get?ts=' + startTime, {
+                    cache: 'no-store',
+                    mode: 'no-cors'
+                }).then(() => {
+                    const latency = Date.now() - startTime;
+                    return latency > 2000; // If response takes >2 seconds
+                }).catch(() => true);
+            }
+
+            // Show warning if connection is slow
+            async function initConnectionWarning() {
+                const isSlow = await checkConnection();
+                if (isSlow) {
+                    const warning = document.getElementById('connectionWarning');
+                    warning.style.display = 'block';
+
+                    document.getElementById('liteThemeBtn').addEventListener('click', () => {
+                        document.body.classList.add('lite-theme');
+                        warning.style.display = 'none';
+                        localStorage.setItem('preferredTheme', 'lite');
+                    });
+
+                    document.getElementById('dismissBtn').addEventListener('click', () => {
+                        warning.style.display = 'none';
+                        localStorage.setItem('preferredTheme', 'default');
+                    });
+                }
+            }
+
+            // Check saved preference
+            if (localStorage.getItem('preferredTheme') === 'lite') {
+                document.body.classList.add('lite-theme');
+            }
+
+            // Initialize connection check
+            window.addEventListener('load', initConnectionWarning);
+            document.addEventListener('DOMContentLoaded', function () {
+                // Display welcome message for 3 seconds
+                setTimeout(function () {
+                    var welcomeContainer = document.getElementById('welcome-container');
+                    welcomeContainer.style.opacity = '0';
+
+                    // Remove the welcome container after fade out
+                    setTimeout(function () {
+                        welcomeContainer.style.display = 'none';
+                        document.getElementById('main-content').style.display = 'block';
+                    }, 1500);
+                }, 3000);
+            });
+        </script>
+</body>
+
+</html>
